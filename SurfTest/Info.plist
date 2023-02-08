@@ -21,5 +21,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SFProDisplay-Bold.ttf</string>
+		<string>SFProDisplay-Regular.ttf</string>
+	</array>
 </dict>
 </plist>
