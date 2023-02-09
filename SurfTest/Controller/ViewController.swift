@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    let littleView = ViewForButton()
 
     var centerConstraint: NSLayoutConstraint!
 
@@ -70,6 +72,7 @@ class ViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(bottomContainerView)
         view.addSubview(separatorView)
+        view.addSubview(littleView)
 
         separatorView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         separatorView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -92,6 +95,11 @@ class ViewController: UIViewController {
         bottomContainerView.topAnchor.constraint(equalTo: separatorView.topAnchor).isActive = true
         bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     
+        littleView.translatesAutoresizingMaskIntoConstraints = false
+        littleView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        littleView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        littleView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        littleView.heightAnchor.constraint(equalToConstant: 120).isActive = true
     }
     
 }

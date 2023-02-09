@@ -19,6 +19,7 @@
 		FAD82E2F29952A2B00E34C1D /* FirstCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD82E2E29952A2B00E34C1D /* FirstCollectionView.swift */; };
 		FAD82E3129952A8800E34C1D /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD82E3029952A8800E34C1D /* FirstCollectionViewCell.swift */; };
 		FAD82E3329952DD800E34C1D /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAD82E3229952DD800E34C1D /* SFProDisplay-Medium.ttf */; };
+		FAE24FFE29953F2A00C01592 /* ViewForButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE24FFD29953F2A00C01592 /* ViewForButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FAD82E2E29952A2B00E34C1D /* FirstCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionView.swift; sourceTree = "<group>"; };
 		FAD82E3029952A8800E34C1D /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD82E3229952DD800E34C1D /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		FAE24FFD29953F2A00C01592 /* ViewForButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				FA9AD64D2994219F00978E98 /* BottomContainerView.swift */,
 				FAD82E2D29952A1700E34C1D /* FirstCollectionView */,
+				FAE24FFD29953F2A00C01592 /* ViewForButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				FAD82E3129952A8800E34C1D /* FirstCollectionViewCell.swift in Sources */,
 				FA9AD63829940C9700978E98 /* AppDelegate.swift in Sources */,
 				FA9AD63A29940C9700978E98 /* SceneDelegate.swift in Sources */,
+				FAE24FFE29953F2A00C01592 /* ViewForButton.swift in Sources */,
 				FA9AD64E2994219F00978E98 /* BottomContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
