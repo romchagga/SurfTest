@@ -43,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0E32BB29951E91007B83A2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FA9AD63729940C9700978E98 /* AppDelegate.swift */,
+				FA9AD63929940C9700978E98 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FA0E32BC29951E9B007B83A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA9AD63B29940C9700978E98 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA0E32BD29951EAC007B83A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA9AD64D2994219F00978E98 /* BottomContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FA9AD62B29940C9700978E98 = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +87,10 @@
 		FA9AD63629940C9700978E98 /* SurfTest */ = {
 			isa = PBXGroup;
 			children = (
+				FA0E32BB29951E91007B83A2 /* Application */,
 				FA9AD64F299424BF00978E98 /* Fonts */,
-				FA9AD63729940C9700978E98 /* AppDelegate.swift */,
-				FA9AD63929940C9700978E98 /* SceneDelegate.swift */,
-				FA9AD63B29940C9700978E98 /* ViewController.swift */,
-				FA9AD64D2994219F00978E98 /* BottomContainerView.swift */,
+				FA0E32BC29951E9B007B83A2 /* Controller */,
+				FA0E32BD29951EAC007B83A2 /* View */,
 				FA9AD63D29940C9700978E98 /* Main.storyboard */,
 				FA9AD64029940C9800978E98 /* Assets.xcassets */,
 				FA9AD64229940C9800978E98 /* LaunchScreen.storyboard */,

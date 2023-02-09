@@ -26,7 +26,7 @@ class BottomContainerView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -53,6 +53,7 @@ class BottomContainerView: UIView {
             descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
+        
     }
     
 }
