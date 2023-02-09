@@ -46,6 +46,9 @@ class BottomContainerView: UIView {
         self.backgroundColor = .white
         setConstraints()
         
+        self.layer.cornerRadius = 10
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
     }
     
     required init?(coder: NSCoder) {

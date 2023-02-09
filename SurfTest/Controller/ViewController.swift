@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 
     var centerConstraint: NSLayoutConstraint!
 
-    var startingConstant: CGFloat  = 0.0
+    var startingConstant: CGFloat  = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,20 +76,18 @@ class ViewController: UIViewController {
 
         separatorView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         separatorView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-
         
-        self.centerConstraint = separatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        self.centerConstraint = separatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 120)
         self.centerConstraint.isActive = true
         
         separatorView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //separatorView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 150).isActive = true
+//        separatorView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
 
         imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: separatorView.topAnchor).isActive = true
         
-
         bottomContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         bottomContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         bottomContainerView.topAnchor.constraint(equalTo: separatorView.topAnchor).isActive = true
