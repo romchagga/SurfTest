@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class FirstCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "CollectionViewCell"
     
@@ -32,11 +32,29 @@ class CollectionViewCell: UICollectionViewCell {
         
         setConstrainst()
         
+//        NotificationCenter.default.addObserver(self, selector: #selector(changeBackgroundColor), name: NSNotification.Name("change background color"), object: nil)
+        
     }
+    
+//    @objc func changeBackgroundColor() {
+//        var isTapped = false
+//        if !isTapped {
+//            view.backgroundColor = .black
+//            nameCategory.textColor = .white
+//            isTapped = false
+//        } else {
+//            view.backgroundColor = .white
+//            nameCategory.textColor = .black
+//            isTapped = true
+//        }
+//
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     func setConstrainst() {
         addSubview(view)

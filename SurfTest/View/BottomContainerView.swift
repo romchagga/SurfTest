@@ -38,7 +38,7 @@ class BottomContainerView: UIView {
     }()
     
     
-    let collectionView = CollectionView()
+    let firstCollectionView = FirstCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,19 +67,19 @@ class BottomContainerView: UIView {
             descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
         
-        self.addSubview(collectionView)
+        self.addSubview(firstCollectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
-            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            collectionView.heightAnchor.constraint(equalToConstant: 44)
+            firstCollectionView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
+            firstCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            firstCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            firstCollectionView.heightAnchor.constraint(equalToConstant: 44)
         ])
         
         self.addSubview(secondDescriptionLabel)
         NSLayoutConstraint.activate([
             secondDescriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             secondDescriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            secondDescriptionLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 24),
+            secondDescriptionLabel.topAnchor.constraint(equalTo: firstCollectionView.bottomAnchor, constant: 24),
             
         ])
         

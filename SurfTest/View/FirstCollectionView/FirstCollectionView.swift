@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CollectionView: UICollectionView {
+class FirstCollectionView: UICollectionView {
+    
+    var isTappedOnCell = false
     
     let namesCategory = ["IOS", "Android", "Design", "Flutter", "QA", "PM"]
 
@@ -19,7 +21,7 @@ class CollectionView: UICollectionView {
         delegate = self
         dataSource = self
         
-        register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.reuseId)
+        register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: FirstCollectionViewCell.reuseId)
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -33,21 +35,36 @@ class CollectionView: UICollectionView {
     
 }
 
-extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension FirstCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseId, for: indexPath) as! CollectionViewCell
+        let cell = dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.reuseId, for: indexPath) as! FirstCollectionViewCell
         
         cell.nameCategory.text = namesCategory[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //        NotificationCenter.default.post(name: NSNotification.Name("change background color"), object: nil)
+        let cell = collectionView.cellForItem(at: indexPath) as! FirstCollectionViewCell
+        
+        if isTappedOnCell {
+            cell.view.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 245/255, alpha: 1)
+            cell.nameCategory.textColor = .black
+            isTappedOnCell = false
+        } else if !isTappedOnCell {
+            cell.view.backgroundColor = .black
+            cell.nameCategory.textColor = .white
+            isTappedOnCell = true
+        }
+    }
 }
 
-    extension CollectionView: UICollectionViewDelegateFlowLayout {
+    extension FirstCollectionView: UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             let label = UILabel(frame: CGRect.zero)
             label.text = namesCategory[indexPath.item]
