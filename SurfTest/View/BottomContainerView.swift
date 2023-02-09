@@ -27,6 +27,17 @@ class BottomContainerView: UIView {
         return label
     }()
     
+    let secondDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Получай стипендию, выстраивай удобный график, работай на современном железе."
+        label.numberOfLines = 0
+        label.textColor = .gray
+        label.font = UIFont(name: "SFProDisplay-Regular", size: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
     let collectionView = CollectionView()
     
     override init(frame: CGRect) {
@@ -62,6 +73,14 @@ class BottomContainerView: UIView {
             collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             collectionView.heightAnchor.constraint(equalToConstant: 44)
+        ])
+        
+        self.addSubview(secondDescriptionLabel)
+        NSLayoutConstraint.activate([
+            secondDescriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            secondDescriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            secondDescriptionLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 24),
+            
         ])
         
     }
