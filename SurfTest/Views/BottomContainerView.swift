@@ -37,8 +37,9 @@ class BottomContainerView: UIView {
         return label
     }()
     
-    
     let firstCollectionView = FirstCollectionView()
+    
+    let secondCellectionView = SecondCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,6 +85,14 @@ class BottomContainerView: UIView {
             secondDescriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             secondDescriptionLabel.topAnchor.constraint(equalTo: firstCollectionView.bottomAnchor, constant: 24),
             
+        ])
+        
+        self.addSubview(secondCellectionView)
+        NSLayoutConstraint.activate([
+            secondCellectionView.topAnchor.constraint(equalTo: secondDescriptionLabel.bottomAnchor, constant: 12),
+            secondCellectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            secondCellectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            secondCellectionView.heightAnchor.constraint(equalToConstant: 120)
         ])
         
     }

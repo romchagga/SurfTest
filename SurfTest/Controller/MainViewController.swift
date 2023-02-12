@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     
     let imageView: UIImageView = {
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let littleView = ViewForButton()
+    let pinnedView = PinnedView()
 
     var centerConstraint: NSLayoutConstraint!
 
@@ -72,32 +72,39 @@ class ViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(bottomContainerView)
         view.addSubview(separatorView)
-        view.addSubview(littleView)
+        view.addSubview(pinnedView)
 
-        separatorView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        separatorView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            separatorView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            separatorView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
+            imageView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: separatorView.topAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            bottomContainerView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            bottomContainerView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            bottomContainerView.topAnchor.constraint(equalTo: separatorView.topAnchor),
+            bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        pinnedView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pinnedView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pinnedView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pinnedView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            pinnedView.heightAnchor.constraint(equalToConstant: 120)
+        ])
         
         self.centerConstraint = separatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 120)
         self.centerConstraint.isActive = true
-        
-        separatorView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        separatorView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
-
-        imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: separatorView.topAnchor).isActive = true
-        
-        bottomContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        bottomContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        bottomContainerView.topAnchor.constraint(equalTo: separatorView.topAnchor).isActive = true
-        bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     
-        littleView.translatesAutoresizingMaskIntoConstraints = false
-        littleView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        littleView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        littleView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        littleView.heightAnchor.constraint(equalToConstant: 120).isActive = true
     }
     
 }

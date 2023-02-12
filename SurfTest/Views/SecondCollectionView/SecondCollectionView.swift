@@ -1,27 +1,27 @@
 //
-//  CollectionView.swift
+//  SecondCollectionView.swift
 //  SurfTest
 //
-//  Created by macbook on 09.02.2023.
+//  Created by macbook on 12.02.2023.
 //
 
 import UIKit
 
-class FirstCollectionView: UICollectionView {
-    
+class SecondCollectionView: UICollectionView {
+
     var isTappedOnCell = false
     
-    let namesCategory = ["IOS", "Android", "Design", "Flutter", "QA", "PM"]
-
+    let namesCategory = ["IOS", "Android", "Design", "QA", "Flutter", "PM"]
+    
     init() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
+        layout.scrollDirection = .vertical
         
         delegate = self
         dataSource = self
         
-        register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: FirstCollectionViewCell.reuseId)
+        register(SecondCollectionViewCell.self, forCellWithReuseIdentifier: SecondCollectionViewCell.reuseId)
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -30,27 +30,26 @@ class FirstCollectionView: UICollectionView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
     }
     
 }
 
-extension FirstCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SecondCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         namesCategory.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.reuseId, for: indexPath) as! FirstCollectionViewCell
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondCollectionViewCell.reuseId, for: indexPath) as! SecondCollectionViewCell
         
         cell.nameCategory.text = namesCategory[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        NotificationCenter.default.post(name: NSNotification.Name("change background color"), object: nil)
-        let cell = collectionView.cellForItem(at: indexPath) as! FirstCollectionViewCell
+        let cell = collectionView.cellForItem(at: indexPath) as! SecondCollectionViewCell
         
         if isTappedOnCell {
             cell.view.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 245/255, alpha: 1)
@@ -63,12 +62,15 @@ extension FirstCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
 }
-
-    extension FirstCollectionView: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let label = UILabel(frame: CGRect.zero)
-            label.text = namesCategory[indexPath.item]
-            label.sizeToFit()
-            return CGSize(width: label.frame.width+50, height: 40)
-        }
+extension SecondCollectionView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let label = UILabel(frame: CGRect.zero)
+        label.text = namesCategory[indexPath.item]
+        label.sizeToFit()
+        return CGSize(width: label.frame.width+50, height: 40)
     }
+}
+
+
+
+
